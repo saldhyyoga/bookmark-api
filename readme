@@ -78,11 +78,20 @@ model Bookmark {
 }
 ```
 
-## 7. Deployment Considerations
-- The app is containerized using Docker with PostgreSQL as the database.
-- Environment variables should be configured in a `.env` file.
-- Use `docker-compose up` to spin up the services.
-- Logging is handled using Pino for better performance.
+### 7. Develop
+
+```
+
+To develop all apps and packages, start the database and localstack:
+
+```
+docker-compose up -d
+```
+after that for the first time you need to migrate database. open new terminal and do
+
+```
+cd bookmarkapp && npx prisma migrate deploy
+```
 
 ---
 This RFC document provides an overview of the BookmarkApp's API structure, architecture, and deployment guidelines. Feedback and suggestions for improvements are welcome!
